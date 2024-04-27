@@ -1,0 +1,36 @@
+.btn {
+    background-color: #f5ef4e;
+    border-radius: 0;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    color: white;
+    background-color: #2f4858;
+}
+
+.btn {
+    animation: ease;
+}
+
+.btn::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+  
+.btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    color: white;
+}
+
+.btn::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #2f4858;
+    z-index: -1;
+    transition: transform .4s ease;
+}

@@ -1,0 +1,18 @@
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <h1 id="logo">Listes des programmes</h1>
+    <div class="row">
+        <!-- Correct the use of classes for grid layout -->
+        <div *ngFor="let programme of programmes" class="col-md-4 mb-4">
+            <div class="card cardExercice" style="margin: 5px;">
+                <a routerLink="/exercices">
+                    <img src="assets/img/program.jpg" class="card-img-top m-2" alt="Program image" style="width: 19rem;">
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="col-6" id="titleCard">{{ programme.nom_programme }}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

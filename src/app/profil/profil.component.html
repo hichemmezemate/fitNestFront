@@ -1,0 +1,20 @@
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <div class="container">
+        <h1 id="titleCard">PROFIL DU CHAMPION</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="assets/img/transformed.jpeg" style="width: 18rem;">
+            </div>
+            <div class="col-6" id="titleCard" *ngIf="userInfo">
+                <h1>Nom : {{userInfo.nom}}</h1>
+                <h1>Prenom : {{userInfo.prenom}}</h1>
+                <h1>Age : {{userInfo.age}}</h1>
+                <h1>Poids : {{userInfo.poids}}</h1>
+                <h1>Email : {{userInfo.email}}</h1>
+                <h1 *ngIf="userInfo.roles[0]">Roles : {{userInfo.roles[0].nom}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- *ngIf="userInfo" -->
