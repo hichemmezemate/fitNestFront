@@ -5,12 +5,12 @@ import { ConnexionService } from './service/connexion/connexion.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
-  constructor(private connexionService: ConnexionService, private router: Router) {}
+  constructor(private connexionService: ConnexionService) {}
 
   canActivate(): boolean {
-    if(this.connexionService.isConnected()) {
+    if(this.connexionService.isConnected() && this.connexionService.isAdmin()) {
       return true;
     } else {
       return false

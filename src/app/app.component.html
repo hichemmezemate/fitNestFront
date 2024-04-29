@@ -7,24 +7,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin: 50px;">
       <div class="navbar-nav">
-        <a class="nav-link" routerLink="/home">ACCUEIL</a>
-        <a class="nav-link" routerLink="/programmes">PROGRAMMES</a>
-        <a class="nav-link" routerLink="/exercices">EXERCICES</a>
+        <a class="nav-link" routerLink="">ACCUEIL</a>
+        <a class="nav-link" routerLink="/programmes" routerLinkActive="active">PROGRAMMES</a>
+        <a class="nav-link" routerLink="/exercices" routerLinkActive="active">EXERCICES</a>
       </div>
       <div class="navbar-nav" *ngIf="!isConnected()">
         <a class="nav-link" routerLink="/connexion">CONNEXION</a>
         <a class="nav-link" routerLink="/inscription">INSCRIPTION</a>
       </div>
       <div class="navbar-nav" *ngIf="isConnected()">
-        <a class="nav-link" routerLink="/profil">PROFIL</a>
-        <a class="nav-link" routerLink="/mes-programmes">MES PROGRAMMES</a>
-        <a class="nav-link" routerLink="/addExercice" *ngIf="isAdmin()">AJOUTER UN EXERCICE</a>
+        <a class="nav-link" routerLink="/mes-programmes" routerLinkActive="active">MES PROGRAMMES</a>
+        <a class="nav-link" routerLink="/addExercice" *ngIf="isAdmin()" routerLinkActive="active">AJOUTER UN
+          EXERCICE</a>
+        <a class="nav-link" routerLink="/gestionUtilisateurs" *ngIf="isAdmin()" routerLinkActive="active">GESTION D'UTILISATEURS</a>
+        <a class="nav-link" routerLink="/profil" routerLinkActive="active">PROFIL</a>
         <a class="nav-link" routerLink="">DECONNEXION</a>
       </div>
 
     </div>
     <span class="badge text-bg-success" *ngIf="isConnected()"
       style="height: 30px; margin: 5px; right: 5px;">Connecté</span>
+    <span class="badge text-bg-secondary" *ngIf="isConnected()"
+      style="height: 30px; margin: 5px; right: 5px;">Utilisateur : {{userInfo?.nom}}</span>
   </div>
 </nav>
 <router-outlet></router-outlet>

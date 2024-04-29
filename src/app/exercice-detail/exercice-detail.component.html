@@ -1,0 +1,12 @@
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <div class="parent">
+        <div class="div1">
+            <h1 id="titleCard">EXERCICE : {{exercice?.nom_exercice}}</h1>
+            <h5>Muscles sollicités : {{exercice?.muscleGroupe[0].nom_muscle}}</h5>
+            <p style="color: grey; margin-right: 2rem;">{{exercice?.description}}</p>
+        </div>
+        <div class="div2">
+            <img src="{{exercice?.image}}" class="card-img-top" alt="...">
+        </div>
+    </div>
+</div>

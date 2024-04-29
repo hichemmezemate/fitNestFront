@@ -1,14 +1,36 @@
 <div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
-    <form #login='ngForm' (ngSubmit)="submit(login.value)">
-        <p id="logo" style="text-align: center;">CONNEXION</p>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
-          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="fit@exemple.fr" name="username" ngModel>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Mots de passe</label>
-          <input type="password" class="form-control" id="InputPassword" placeholder="*******" name="password" ngModel>
-        </div>
-        <button type="submit" class="btn" >Submit</button>
-      </form>
+  <form #addProgramme='ngForm' (ngSubmit)="submit(addProgramme.value)">
+    <p id="logo" style="text-align: center;">CREER UN PROGRAMME</p>
+    <div class="mb-3">
+      <label for="InputFirstName" class="form-label">Nom du programme</label>
+      <input type="text" class="form-control" id="InputExercice" placeholder="ex : Leg Press" name="nom_programme"
+        ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="InputLastName" class="form-label">Lien image</label>
+      <input type="text" class="form-control" id="InputLink"
+        placeholder="ex : https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif" name="image" ngModel>
+    </div>
+
+    <div class="dropdown m-5">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Select Options
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li *ngFor="let exercice of exercices">
+          <a class="dropdown-item d-flex align-items-center">
+            <img [src]="exercice.image" class="option-image me-2" alt="Option Image">
+            <input type="checkbox" [checked]="exercice.selected" (change)="onSelectionChange(exercice)" name="exercices"
+              ngModel />
+            <span class="ms-2">{{ exercice.nom_exercice }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
 </div>

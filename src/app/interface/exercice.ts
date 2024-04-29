@@ -2,7 +2,8 @@ export interface Exercice {
     id: number,
     nom_exercice: string,
     image: string
-    muscleGroupe: {
+    description: string
+    muscleGroupe?: {
         id: number,
         nom_muscle: string
     }[]

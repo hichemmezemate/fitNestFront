@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ExercicesService } from '../service/exercices/exercices.service';
 import { Exercice } from '../interface/exercice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exercices',
@@ -10,7 +11,7 @@ import { Exercice } from '../interface/exercice';
 export class ExercicesComponent {
   exercices: Exercice[] = []
 
-  constructor(private exerciceService: ExercicesService) {
+  constructor(private exerciceService: ExercicesService, private router: Router) {
     
   }
 
@@ -24,5 +25,9 @@ export class ExercicesComponent {
         console.error('Error fetching data: ', error);
       }
     );
+  }
+
+  navigateToDetail(exercice: any) {
+    this.router.navigate(['/exerciceDetail', exercice.id]);
   }
 }

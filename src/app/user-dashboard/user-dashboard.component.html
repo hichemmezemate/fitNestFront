@@ -1,0 +1,45 @@
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <form #updateUser='ngForm' (ngSubmit)="submit(updateUser.value)">
+        <p id="logo" style="text-align: center;">MODIFIER UN UTILISATEUR</p>
+        <div *ngIf="userInfo">
+            <div class="mb-3">
+                <label for="InputFirstName" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="InputName" name="nom" [(ngModel)]="userInfo.nom" required>
+            </div>
+            <div class="mb-3">
+                <label for="InputLastName" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="InputName" name="prenom" [(ngModel)]="userInfo.prenom"
+                    required>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="InputAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="InputAge" name="age" [(ngModel)]="userInfo.age"
+                        required>
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="InputWeight" class="form-label">Poids</label>
+                    <input type="number" class="form-control" id="InputAge" name="poids" [(ngModel)]="userInfo.poids"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
+                <input type="email" class="form-control" id="InputEmail" name="email" [(ngModel)]="userInfo.email"
+                    required aria-describedby="emailHelp" placeholder="fit@exemple.fr">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mots de passe</label>
+                <input type="password" class="form-control" id="InputPassword" name="password" required
+                    placeholder="*******" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="isAdmin" class="form-check-label">Admin ?</label>
+                <input type="checkbox" [checked]="userInfo.selected" (change)="onSelectionChange(userInfo)"
+                    class="mx-3 mt-1" ngModel name="admin">
+            </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>

@@ -43,11 +43,10 @@ export class ConnexionService {
         this.getUserInfo(this.userToken.user_id, this.userToken.access_token).subscribe({
           next: (res: any) => {
             this.userInfo = res;
+            return this.userInfo
           },
           error: () => alert('Erreur de récupération des informations utilisateur')
         })
-
-        console.log("the token is here" ,this.userToken)
       },
       error: (error: any) => {
         console.error('Error fetching user token:', error);
@@ -55,7 +54,7 @@ export class ConnexionService {
     });
   }
 
-  isConnected() {  
+  isConnected() { 
     if(this.isLog) {
       return true
     } else {
@@ -64,7 +63,7 @@ export class ConnexionService {
   }
 
   isAdmin(){
-    if(this.userInfo != undefined && this.userInfo.roles[0]!= null && this.userInfo.roles[0].nom == "Admin") {
+    if(this.userInfo != undefined && this.userInfo.role.nom === "Admin") {
       return true
     } else {
       return false

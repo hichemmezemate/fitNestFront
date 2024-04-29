@@ -11,10 +11,10 @@ export class InscriptionComponent {
   constructor(private inscriptionService: InscriptionService) {}
 
   submit(data: any) {
-    data['roles'] = [
+    data['role'] = [
       {
-        "id": 4,
-        "nom": "Utilisateur"
+        "id": 2,
+        "nom": "User"
       }
     ];
     data['programme'] = [];

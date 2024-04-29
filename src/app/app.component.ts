@@ -11,8 +11,7 @@ import { ProfilService } from './service/profil/profil.service';
 export class AppComponent {
   title = 'fitNest';
 
-  
-
+  userInfo: any
 
   constructor(private connexionService: ConnexionService, public authService: AuthService, private profilService: ProfilService) {}
 
@@ -25,7 +24,6 @@ export class AppComponent {
               event.preventDefault(); 
               
               navLinks.forEach(n => n.classList.remove('active'));
-              console.log("clicked")
               navLink.classList.add('active');
           });
       });
@@ -35,6 +33,7 @@ export class AppComponent {
 
   isConnected (){
     if(this.connexionService.isConnected()) {
+      this.userInfo = this.connexionService.userInfo
       return true
     } else {
       return false

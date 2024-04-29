@@ -10,18 +10,28 @@ import { AuthGuard } from './auth.guard';
 import { CreateProgramComponent } from './create-program/create-program.component';
 import { MesProgrammesComponent } from './mes-programmes/mes-programmes.component';
 import { AddExerciceComponent } from './add-exercice/add-exercice.component';
+import { ExerciceDetailComponent } from './exercice-detail/exercice-detail.component';
+import { ProgrammeDetailComponent } from './programme-detail/programme-detail.component';
+import { GestionUtilisateursComponent } from './gestion-utilisateurs/gestion-utilisateurs.component';
+import { AdminGuard } from './admin.guard';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
-  {path: "home", component: AccueilComponent},
   {path: "", component: AccueilComponent},
+  {path: "home", component: AccueilComponent},
   {path: "exercices", component: ExercicesComponent},
   {path: "programmes", component: ProgrammesComponent},
   {path: "connexion", component: ConnexionComponent},
   {path: "inscription", component: InscriptionComponent},
   {path: "profil", component: ProfilComponent, canActivate: [AuthGuard]},
-  {path: "creer-programme", component: CreateProgramComponent, canActivate: [AuthGuard]},
+  {path: "creer-programme", component: CreateProgramComponent},
   {path: "mes-programmes", component: MesProgrammesComponent, canActivate: [AuthGuard]},
-  {path: "addExercice", component: AddExerciceComponent, canActivate: [AuthGuard]}
+  {path: "addExercice", component: AddExerciceComponent, canActivate: [AuthGuard]},
+  {path: "gestionUtilisateurs", component: GestionUtilisateursComponent, canActivate: [AdminGuard]},
+  {path: "exerciceDetail/:id", component: ExerciceDetailComponent},
+  {path: "programmeDetail/:id", component: ProgrammeDetailComponent},
+  {path: "userDashboard/:id", component: UserDashboardComponent, canActivate: [AdminGuard]},
+
 
 ];
 

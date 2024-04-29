@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ConnexionService } from '../service/connexion/connexion.service';
-import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -18,7 +17,7 @@ export class ConnexionComponent {
       next: (result: any) => {
         this.response = result;
         this.connexionService.isLog = true;
-        this.connexionService.router.navigate(['home']);
+        this.connexionService.router.navigate(['/home']);
       },
       error: (error: any) => {
         console.error('Login failed:', error);

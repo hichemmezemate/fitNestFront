@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Programme } from '../interface/programme';
 import { ProgrammesService } from '../service/programmes/programmes.service';
+import { ConnexionService } from '../service/connexion/connexion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-programmes',
@@ -10,7 +12,7 @@ import { ProgrammesService } from '../service/programmes/programmes.service';
 export class ProgrammesComponent {
   programmes: Programme[] = []
 
-  constructor(private programmesService: ProgrammesService) {
+  constructor(private programmesService: ProgrammesService, private router: Router) {
     
   }
 
@@ -24,4 +26,11 @@ export class ProgrammesComponent {
       }
     );
   }
+
+  navigateToDetail(program: any) {
+    this.router.navigate(['/programmeDetail', program.id]);
+  }
+
+
+
 }

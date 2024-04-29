@@ -1,10 +1,15 @@
 <div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <div class="container">
+        <h1 id="titleCard" style="text-align: center;">PROGRAMME : {{programme?.nom_programme}}</h1>
+        <img [src]="programme?.image" class="card-img-top" alt="..." style="width: 100%;">
+    </div>
+
     <h1 id="logo">Listes des exercices :</h1>
     <div class="row">
         <div *ngFor="let exercice of exercices" class="card cardExercice" style="width: 18rem; margin: 2rem;"
             (click)="navigateToDetail(exercice)">
-            <img src="{{exercice.image}}" class="card-img-top" alt="..." style="height: 100%;">
-            <div class="card-body">
+            <img src="{{exercice.image}}" class="card-img-top" alt="...">
+            <div class="card-body" >
                 <h5 class="card-title" id="titleCard">{{exercice.nom_exercice}}</h5>
                 <p class="card-text text-secondary" *ngFor="let Groupe of exercice.muscleGroupe">Muscles sollicités :
                     {{Groupe.nom_muscle}} </p>

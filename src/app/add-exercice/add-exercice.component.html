@@ -1,1 +1,29 @@
-<p>add-exercice works!</p>
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <form #addExercice='ngForm' (ngSubmit)="submit(addExercice.value)">
+        <p id="logo" style="text-align: center;">AJOUTER UN EXERCICE</p>
+        <div class="mb-3">
+            <label for="InputFirstName" class="form-label">Nom de l'exercice</label>
+            <input type="text" class="form-control" id="InputExercice" placeholder="ex : Leg Press" name="nom_exercice"
+                ngModel>
+        </div>
+        <div class="mb-3">
+            <label for="InputLastName" class="form-label">Lien image</label>
+            <input type="text" class="form-control" id="InputLink"
+                placeholder="ex : https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif" name="image"
+                ngModel>
+        </div>
+        <div class="mb-3">
+            <label for="InputLastName" class="form-label">Description</label>
+            <textarea type="text" class="form-control" id="InputDescription" placeholder="Ajouter une description"
+                name="description" ngModel></textarea>
+
+        </div>
+        <label for="InputLastName" class="form-label">Muscle sollicité : </label>
+        <select class="form-select mb-3" aria-label="Default select example" name="muscleGroupe" ngModel>
+            <option *ngFor="let groupe of groupeMuscle" [ngValue]="[{ id: groupe.id, nom_muscle: groupe.nom_muscle }]">
+                {{groupe.nom_muscle}}
+            </option>
+        </select>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>

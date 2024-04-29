@@ -14,6 +14,12 @@ import { ProfilComponent } from './profil/profil.component';
 import { CreateProgramComponent } from './create-program/create-program.component';
 import { MesProgrammesComponent } from './mes-programmes/mes-programmes.component';
 import { AddExerciceComponent } from './add-exercice/add-exercice.component';
+import { ExerciceDetailComponent } from './exercice-detail/exercice-detail.component';
+import { BsDropdownDirective, BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgrammeDetailComponent } from './programme-detail/programme-detail.component';
+import { GestionUtilisateursComponent } from './gestion-utilisateurs/gestion-utilisateurs.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +33,20 @@ import { AddExerciceComponent } from './add-exercice/add-exercice.component';
     CreateProgramComponent,
     MesProgrammesComponent,
     AddExerciceComponent,
+    ExerciceDetailComponent,
+    ProgrammeDetailComponent,
+    GestionUtilisateursComponent,
+    UserDashboardComponent,
   ],
   imports: [
+    BsDropdownModule.forRoot(),
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [BsDropdownDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
