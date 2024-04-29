@@ -23,7 +23,6 @@ export class UserDashboardComponent {
     this.userService.getUser(userId).subscribe(
       (data: User) => {
         this.userInfo = data;
-        console.log('the real info ',this.userInfo )
         
       },
       error => {
@@ -37,7 +36,6 @@ export class UserDashboardComponent {
   }
 
   submit(data: any) {
-    console.log('Updated user:', data.admin);
     if(data.admin == true) {
       data.role = [
         {
@@ -50,9 +48,7 @@ export class UserDashboardComponent {
     }
     data.programme = this.userInfo.programme
     delete data.admin;
-    // data.role = this.userInfo.role
     data.id = this.userInfo.id
-    console.log(data)
 
     this.userService.updateUser(data).subscribe({
       next: (result: any) => {

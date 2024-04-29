@@ -48,5 +48,9 @@ export class AppComponent {
     } 
   }
 
+  logOut() {
+    this.connexionService.logout()
+  }
+
 }
 

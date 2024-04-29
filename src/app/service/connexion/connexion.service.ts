@@ -24,6 +24,12 @@ export class ConnexionService {
     return this.response;
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    this.isLog = false
+    this.router.navigate(['/connexion']);
+  }
+
   setResponse() {
     return this.response
   }
@@ -40,6 +46,7 @@ export class ConnexionService {
     this.setResponse().subscribe({
       next: (result: any) => {
         this.userToken = result;
+        localStorage.setItem('token', this.userToken.access_token.toString())
         this.getUserInfo(this.userToken.user_id, this.userToken.access_token).subscribe({
           next: (res: any) => {
             this.userInfo = res;

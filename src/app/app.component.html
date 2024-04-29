@@ -21,7 +21,7 @@
           EXERCICE</a>
         <a class="nav-link" routerLink="/gestionUtilisateurs" *ngIf="isAdmin()" routerLinkActive="active">GESTION D'UTILISATEURS</a>
         <a class="nav-link" routerLink="/profil" routerLinkActive="active">PROFIL</a>
-        <a class="nav-link" routerLink="">DECONNEXION</a>
+        <a class="nav-link" routerLink=""   (click)="logOut()">DECONNEXION</a>
       </div>
 
     </div>

@@ -14,9 +14,7 @@ export class ProfilComponent implements OnInit {
 
   constructor(private connexionService: ConnexionService, private profilService: ProfilService) {}
 
-  ngOnInit() {
-    console.log("here" ,this.connexionService.userInfo);
-    
+  ngOnInit() {    
     this.userInfo = this.connexionService.userInfo
   }
 }
