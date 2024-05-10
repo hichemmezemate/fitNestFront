@@ -23,4 +23,9 @@ export class GestionUtilisateursService {
   updateUser(body:any) {
     return this.http.put<User>(this.usersURL, body)
   }
+
+  deleteUser(id: number) {
+    return this.http.delete(this.usersURL + "/" + id);
+  }
+
 }

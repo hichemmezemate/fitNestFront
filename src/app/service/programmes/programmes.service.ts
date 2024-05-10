@@ -31,5 +31,16 @@ export class ProgrammesService {
         return false
       }
     })
-  } 
+  }
+
+  deleteProgramme(id: number): Observable<Programme> {
+    return this.http.delete<Programme>(this.programmeURL+'/'+id)
+  }
+
+  updateProgramme(body:any) {
+    return this.http.put<Programme>(this.programmeURL, body)
+  }
+  
+
+
 }

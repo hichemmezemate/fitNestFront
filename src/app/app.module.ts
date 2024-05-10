@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgrammeDetailComponent } from './programme-detail/programme-detail.component';
 import { GestionUtilisateursComponent } from './gestion-utilisateurs/gestion-utilisateurs.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ExerciceDashboardComponent } from './exercice-dashboard/exercice-dashboard.component';
+import { ProgrammeDashboardComponent } from './programme-dashboard/programme-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     ProgrammeDetailComponent,
     GestionUtilisateursComponent,
     UserDashboardComponent,
+    ExerciceDashboardComponent,
+    ProgrammeDashboardComponent,
   ],
   imports: [
     BsDropdownModule.forRoot(),

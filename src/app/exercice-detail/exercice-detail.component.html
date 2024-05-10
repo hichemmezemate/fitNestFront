@@ -9,4 +9,8 @@
             <img src="{{exercice?.image}}" class="card-img-top" alt="...">
         </div>
     </div>
+    <button class="btn mx-1" *ngIf="this.connexionService.isAdmin()" type="submit"
+        style="background-color: #f5ef4e;" (click)="navigateToDetail(exercice)">Modifier l'exercice</button>
+    <button class="btn mx-1" *ngIf="this.connexionService.isAdmin()" type="submit" style="background-color: #f5ef4e;"
+        (click)="deleteExercice(exercice)">Supprimer l'exercice</button>
 </div>

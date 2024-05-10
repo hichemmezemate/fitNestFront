@@ -15,6 +15,8 @@ import { ProgrammeDetailComponent } from './programme-detail/programme-detail.co
 import { GestionUtilisateursComponent } from './gestion-utilisateurs/gestion-utilisateurs.component';
 import { AdminGuard } from './admin.guard';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ExerciceDashboardComponent } from './exercice-dashboard/exercice-dashboard.component';
+import { ProgrammeDashboardComponent } from './programme-dashboard/programme-dashboard.component';
 
 const routes: Routes = [
   {path: "", component: AccueilComponent},
@@ -31,8 +33,8 @@ const routes: Routes = [
   {path: "exerciceDetail/:id", component: ExerciceDetailComponent},
   {path: "programmeDetail/:id", component: ProgrammeDetailComponent},
   {path: "userDashboard/:id", component: UserDashboardComponent, canActivate: [AdminGuard]},
-
-
+  {path: "exerciceDashboard/:id", component: ExerciceDashboardComponent, canActivate: [AdminGuard]},
+  {path: "programmeDashboard/:id", component: ProgrammeDashboardComponent, canActivate: [AdminGuard]},
 ];
 
 @NgModule({

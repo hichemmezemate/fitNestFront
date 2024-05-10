@@ -27,6 +27,8 @@ export class ConnexionService {
   logout() {
     localStorage.removeItem('token');
     this.isLog = false
+    this.userInfo = null
+    this.userToken = null
     this.router.navigate(['/connexion']);
   }
 
@@ -70,10 +72,17 @@ export class ConnexionService {
   }
 
   isAdmin(){
-    if(this.userInfo != undefined && this.userInfo.role.nom === "Admin") {
-      return true
-    } else {
-      return false
+    let adminPresent: boolean = false
+    if  (this.userInfo != null){
+      for (const role of this.userInfo.role) {
+        if(role.nom === "Admin") {
+          adminPresent = true
+          break 
+        } else {
+          adminPresent = false
+        }
+      }
     }
+    return adminPresent
   }
 }

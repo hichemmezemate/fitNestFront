@@ -31,4 +31,13 @@ export class ExercicesService {
       }
     })
   }
+
+  deleteExercice(id: number): Observable<Exercice> {
+    return this.http.delete<Exercice>(this.exerciceURL+'/'+id)
+  }
+
+  updateExercice(body:any) {
+    return this.http.put<Exercice>(this.exerciceURL, body)
+  }
+
 }

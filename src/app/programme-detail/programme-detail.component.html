@@ -8,12 +8,19 @@
     <div class="row">
         <div *ngFor="let exercice of exercices" class="card cardExercice" style="width: 18rem; margin: 2rem;"
             (click)="navigateToDetail(exercice)">
-            <img src="{{exercice.image}}" class="card-img-top" alt="...">
-            <div class="card-body" >
+            <img src="{{exercice.image}}" class="card-img-top" alt="..." style="height: 100%;">
+            <div class="card-body">
                 <h5 class="card-title" id="titleCard">{{exercice.nom_exercice}}</h5>
                 <p class="card-text text-secondary" *ngFor="let Groupe of exercice.muscleGroupe">Muscles sollicités :
                     {{Groupe.nom_muscle}} </p>
             </div>
+        </div>
+        <div>
+            <button class="btn mx-1" *ngIf="this.connexionService.isAdmin()" type="submit"
+                style="background-color: #f5ef4e;" (click)="navigateToDashboard(programme)">Modifier le
+                programme</button>
+            <button *ngIf="this.connexionService.isAdmin()" class="btn m-4" type="submit"
+                style="background-color: #f5ef4e;" (click)="deleteProgramme(programme)">Supprimer le programme</button>
         </div>
 
     </div>

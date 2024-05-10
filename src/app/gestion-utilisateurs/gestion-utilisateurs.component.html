@@ -19,9 +19,10 @@
                 <td>{{user.email}}</td>
                 <td>{{user.age}}</td>
                 <td>
-                    {{ user.role?.nom === 'Admin' ? 'Admin' : 'User' }}
+                    {{ user.role[0]?.nom === 'Admin' ? 'Admin' : 'User' }}
                 </td>
-                <button class="btn" type="submit" style="background-color: #f5ef4e;" (click)="navigateToDetail(user)">Edit</button>
+                <button class="btn mx-1" type="submit" style="background-color: #f5ef4e;" (click)="navigateToDetail(user)">Modifier</button>
+                <button class="btn" type="submit" style="background-color: #f5ef4e;" (click)="deleteUser(user)">Supprimer</button>
             </tr>
         </tbody>
     </table>

@@ -1,0 +1,31 @@
+<div class="container bg-body-tertiary mt-5 p-5" style="border-radius: 20px;">
+    <form #updateExercice='ngForm' (ngSubmit)="submit(updateExercice.value)">
+        <p id="logo" style="text-align: center;">MODIFIER UN EXERCICE</p>
+        <div *ngIf="exerciceInfo">
+            <div class="mb-3">
+                <label for="InputFirstName" class="form-label">Nom exercice</label>
+                <input type="text" class="form-control" id="InputName" name="nom_exercice"
+                    [(ngModel)]="exerciceInfo.nom_exercice" required>
+            </div>
+            <div class="mb-3">
+                <label for="InputLastName" class="form-label">Lien Image</label>
+                <input type="url" class="form-control" id="InputName" name="image" [(ngModel)]="exerciceInfo.image"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="InputLastName" class="form-label">Description</label>
+                <textarea type="text" class="form-control" id="InputName" name="description"
+                    [(ngModel)]="exerciceInfo.description" required></textarea>
+            </div>
+            <label for="InputLastName" class="form-label">Muscle sollicité : </label>
+            <select class="form-select mb-3" aria-label="Default select example" name="muscleGroupe"
+                [(ngModel)]="exerciceInfo.muscleGroupe[0].id">
+                <option *ngFor="let groupe of groupeMuscle"
+                    [ngValue]="[{ id: groupe.id, nom_muscle: groupe.nom_muscle }]">
+                    {{groupe.nom_muscle}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
