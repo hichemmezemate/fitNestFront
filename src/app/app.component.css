@@ -11,6 +11,8 @@
     align-content: center;
 }
 
+
+
 .nav-link::before, .nav-link.active::before {  
     transform: scaleY(0);
     transform-origin: top;
@@ -33,3 +35,17 @@
     transition: transform .5s ease;
 }
 
+@media (max-width: 576px) {
+    #navbarNavAltMarkup {
+        background-color: #f5ef4e;
+        top: -28px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .nav-link {
+        position: relative;
+        width: 100%;
+        left: 0px;
+    }
+}

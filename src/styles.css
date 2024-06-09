@@ -13,6 +13,13 @@ body {
     font-size: 50px;
 }
 
+#titleHome {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
 #titleCard {
     font-family: "Staatliches", sans-serif;
     font-weight: 100;
@@ -107,6 +114,34 @@ a:visited {
 .dropdown-menu {
 max-height: 300px;
 overflow-y: auto; 
+background-color: #f5ef4e;
 width: 100%;
 }
     
+
+@media (max-width: 576px) {
+    .imageHome {
+        display: none;
+    }
+    
+    #logo {
+        font-size: 40px;
+    }
+
+    #titleHome {
+        font-size: 80px;
+    }
+
+
+    .card-title {
+        align-content: center;
+    }
+
+    #titleCard {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
